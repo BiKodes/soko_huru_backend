@@ -1,3 +1,6 @@
+from dataclasses import fields
+from itertools import product
+from pyexpat import model
 from rest_framework import serializers
 
 from .models import Category, Product
@@ -13,4 +16,16 @@ class ProductSerializer(serializers.ModelSerializer):
             "price",
             "get_image",
             "get_thumbnail"
+        )
+
+class CategorySerializer(serializers.ModelSerializer):
+    product = ProductSerializer(many=True)
+
+    class Meta:
+        model = Category
+        fields = (
+            "id",
+            "name",
+            "get_absolute_url",
+            "products"
         )
