@@ -15,6 +15,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MPESA_SECRET_KEY =''
+
 
 # Application definition
 
@@ -26,12 +28,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #customapps
+    #libraries
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
     'djoser',
-    'product'
+
+    #customapps
+    'product',
+    'orders'
 ]
 
 
