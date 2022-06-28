@@ -1,6 +1,7 @@
 from dataclasses import fields
 from itertools import product
 from pyexpat import model
+from unicodedata import category
 from rest_framework import serializers
 
 from .models import Category, Product
@@ -19,7 +20,10 @@ class ProductSerializer(serializers.ModelSerializer):
         )
 
 class CategorySerializer(serializers.ModelSerializer):
-    product = ProductSerializer(many=True)
+    products = serializers.SerializerMethodField(read_only=True)
+
+    def get_products(self, obj):
+        return ProductSerializer(instance=Product.objects.filter(category=obj.id).all()).data
 
     class Meta:
         model = Category

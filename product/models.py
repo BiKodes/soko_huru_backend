@@ -1,6 +1,5 @@
 from distutils.command.upload import upload
 from email.mime import image
-from unicodedata import category
 from django.db import models
 from django.core.files import File
 
@@ -25,6 +24,7 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField()
     description = models.TextField(blank=True, null=True)
+    quantity = models.IntegerField()
     price = models.DecimalField(max_digits=6,decimal_places=2)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
     thumbnail = models.ImageField(upload_to='uploads/', blank=True, null=True)
