@@ -26,10 +26,10 @@ class MyOrderSerializer(serializers.ModelSerializer):
             "last_name",
             "email",
             "address",
-            "zipcode",
-            "place",
+            "postal_code",
+            "county",
             "phone",
-            "stripe_token",
+            "mpesa_token",
             "items",
             "paid_amount"
         )
