@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('first_name', models.CharField(max_length=100)),
                 ('last_name', models.CharField(max_length=100)),
                 ('email', models.CharField(max_length=100)),
-                ('phone', models.CharField(max_length=100)),
+                ('mobile_number', models.CharField(max_length=100)),
                 ('address', models.CharField(max_length=100)),
                 ('postal_code', models.CharField(max_length=100)),
                 ('county', models.CharField(max_length=100)),

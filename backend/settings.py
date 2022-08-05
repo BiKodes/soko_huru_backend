@@ -17,6 +17,10 @@ ALLOWED_HOSTS = []
 
 MPESA_SECRET_KEY =''
 
+# Cart
+SESSION_COOKIE_AGE = 100000 
+CART_SESSION_ID = 'cart' 
+
 
 # Application definition
 
@@ -27,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
 
     #libraries
     'rest_framework',
@@ -34,9 +39,12 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djoser',
 
-    #customapps
+    #custom-apps
     'product',
-    'orders'
+    'orders',
+    'cart',
+    'coupon',
+    'userprofile'
 ]
 
 

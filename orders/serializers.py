@@ -28,7 +28,7 @@ class MyOrderSerializer(serializers.ModelSerializer):
             "address",
             "postal_code",
             "county",
-            "phone",
+            "mobile_number",
             "mpesa_token",
             "items",
             "paid_amount"
@@ -56,9 +56,9 @@ class OrderSerializer(serializers.ModelSerializer):
             "address",
             "postal_code",
             "county",
-            "phone",
+            "mobile_number",
             "mpesa_token",
-            "items",
+            "items"
         )
     
     def create(self, validated_data):

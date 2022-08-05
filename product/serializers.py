@@ -1,11 +1,6 @@
-from dataclasses import fields
-from itertools import product
-from pyexpat import model
-from tkinter import BROWSE
-from unicodedata import category
 from rest_framework import serializers
 
-from .models import Category, Product
+from .models import Category, Product, ProductImage
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,6 +15,11 @@ class ProductSerializer(serializers.ModelSerializer):
             "get_thumbnail"
         )
 
+class ProductImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductImage
+        fields = '__all__'
+        
 class CategorySerializer(serializers.ModelSerializer):
     products = serializers.SerializerMethodField(read_only=True)
 
